@@ -5,6 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import designTokens from './design-tokens.json'
 import { Footer } from './footer/footer'
 import { Header } from './header/header'
+import { BannerSimple } from './banner/banner-simple';
 
 const theme = createTheme({
   palette: {
@@ -54,14 +55,13 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Container sx={{
-        backgroundColor: 'custom.backgroundColor',
-      }}>
+      <Container>
 
         <Header></Header>
 
         <Box component="main">
           <Card></Card>
+          <BannerSimple></BannerSimple>
         </Box>
         
         <Footer></Footer>
