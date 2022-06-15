@@ -53,6 +53,7 @@ const theme = createTheme({
 
 
 function App() {
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -62,6 +63,7 @@ function App() {
         <Box component="main">
           <Card></Card>
           <BannerSimple></BannerSimple>
+          <BannerSimple backgroundColor='secondary.light'></BannerSimple>
         </Box>
         
         <Footer></Footer>

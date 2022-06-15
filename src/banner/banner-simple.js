@@ -4,7 +4,7 @@ import { Box, Button, Typography } from '@mui/material';
 import fakeData from './banner-simple-data.json';
 
 
-export function BannerSimple() {
+export function BannerSimple({ backgroundColor = "primary.light" }) {
 
   return (
     <>
@@ -13,7 +13,7 @@ export function BannerSimple() {
           sx={{
             margin: '1em 0',
             padding: '2em',
-            backgroundColor: 'primary.light',
+            backgroundColor: backgroundColor,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
