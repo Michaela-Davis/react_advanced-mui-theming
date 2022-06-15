@@ -21,7 +21,7 @@ export function BannerSimple({ backgroundColor = "primary.light", bannerText, bu
           <Button 
             variant="contained"
             color="primary"   
-            href={bannerHref} target="_blank" rel="noopener"
+            href={ bannerHref } target="_blank" rel="noopener"
             sx={{
               gridRow: '1 / -1',
               alignSelf: 'start',

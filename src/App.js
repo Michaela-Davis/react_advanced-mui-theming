@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { Box, Card, Container, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { useState } from 'react';
+import { Box, Container, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import designTokens from './design-tokens.json'
@@ -56,6 +56,7 @@ const theme = createTheme({
 function App() {
 
   const [bgColor, setBgColor] = useState('secondary.light');
+  const [bannerText, setBannerText] = useState();
 
   return (
     <ThemeProvider theme={theme}>
@@ -64,24 +65,37 @@ function App() {
         <Header></Header>
 
         <Box component="main">
+
           <BannerSimple bannerText="I'm a simple banner"></BannerSimple>
 
           <FormControl fullWidth
             sx={{ mt: '3em'}}>
+
             <InputLabel id="state-color-select">Banner background color</InputLabel>
             <Select
-                labelId="state-color-select"
-                id="demo-simple-select"
-                value={bgColor}
-                label="Banner background color"
-                onChange={event => setBgColor(event.target.value)}
-              >
-                <MenuItem value={'secondary.light'}>Light purple</MenuItem>
-                <MenuItem value={'primary.light'}>Light teal</MenuItem>
-                <MenuItem value={'error.dark'}>Dark red</MenuItem>
-              </Select>
-            </FormControl>
-          <BannerSimple backgroundColor={bgColor} bannerText='I use state'></BannerSimple>
+              labelId="state-color-select"
+              id="demo-simple-select"
+              value={bgColor}
+              label="Banner background color"
+              onChange={event => setBgColor(event.target.value)}
+            >
+              <MenuItem value={'secondary.light'}>Light purple</MenuItem>
+              <MenuItem value={'primary.light'}>Light teal</MenuItem>
+              <MenuItem value={'error.dark'}>Dark red</MenuItem>
+            </Select>
+          </FormControl>
+
+          <FormControl fullWidth
+            sx={{ mt: '3em'}}>
+            <TextField
+              id="outlined-name"
+              label="Banner text"
+              value={ bannerText }
+              onChange={ event => setBannerText(event.target.value) }
+            />
+          </FormControl>
+          <BannerSimple backgroundColor={ bgColor } bannerText={ bannerText }></BannerSimple>
+
         </Box>
         
         <Footer></Footer>
