@@ -1,0 +1,49 @@
+{
+  "color": {
+    "rocketRed": "#c8102e",
+    "primaryBlack": "#000",
+    "primaryRed": "#ff0000",
+    "primaryYellow": "#ffff00",
+    "primaryGreen": "#00ff00",
+    "mainTeal": "#037c6e",
+    "lightTeal": "#28a99e",
+    "darkTeal": "#025043",
+    "mainPurple": "#6a359c",
+    "lightPurple": "#804fb3",
+    "darkPurple": "#552586",
+    "white": "#fff"
+  },
+
+  "typography": {
+    "fontFamily": "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    "fontSize": "12",
+    "fontWeightLight": "300",
+    "fontWeightRegular": "400",
+    "fontWeightMedium": "500",
+    "fontWeightBold": "700",
+
+    "h1": {
+      "fontFamily": "'Roboto', 'Helvetica', 'Arial', sans-serif",
+      "fontWeight": "700",
+
+      "_comment": "MUI only supports REM font sizing for accessibilty reasons",
+      "fontSize": "3rem",
+
+      "letterSpacing": "-0.01562em",
+      "lineHeight": "1.167"
+    },
+
+    "h2": {
+      "fontFamily": "'Roboto', 'Helvetica', 'Arial', sans-serif",
+      "fontWeight": "500"
+    },
+
+    "h3": {
+      "fontFamily": "'Roboto', 'Helvetica', 'Arial', sans-serif",
+      "fontWeight": "500",
+      "fontSize": "1.5rem",
+      "letterSpacing": "0em",
+      "lineHeight": "1.167"
+    }
+  }
+}
