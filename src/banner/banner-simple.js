@@ -1,14 +1,12 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 
-import fakeData from './banner-simple-data.json';
 
-
-export function BannerSimple({ backgroundColor = "primary.light" }) {
+export function BannerSimple({ backgroundColor = "primary.light", bannerText, buttonText = "Visit Rocket", bannerHref ="https://www.rocketcompanies.com/"}) {
 
   return (
     <>
-      { fakeData.bannerText &&
+      { bannerText &&
         <Box
           sx={{
             margin: '1em 0',
@@ -19,17 +17,17 @@ export function BannerSimple({ backgroundColor = "primary.light" }) {
             justifyContent: 'center',
             gap: 4,
           }}>
-          <Typography variant="h3" sx={{ color: 'primary.contrastText'}}>{ fakeData.bannerText }</Typography>
+          <Typography variant="h3" sx={{ color: 'primary.contrastText'}}>{ bannerText }</Typography>
           <Button 
             variant="contained"
             color="primary"   
-            href='https://www.rocketcompanies.com/' target="_blank" rel="noopener"
+            href={bannerHref} target="_blank" rel="noopener"
             sx={{
               gridRow: '1 / -1',
               alignSelf: 'start',
               justifySelf: "start"
             }}>
-          { fakeData.buttonText }
+          { buttonText }
           </Button>
         </Box>
       }

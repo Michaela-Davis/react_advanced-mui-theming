@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Card, Container } from '@mui/material';
+import { useState, useEffect } from 'react';
+import { Box, Card, Container, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import designTokens from './design-tokens.json'
@@ -54,6 +55,8 @@ const theme = createTheme({
 
 function App() {
 
+  const [bgColor, setBgColor] = useState('secondary.light');
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -61,9 +64,24 @@ function App() {
         <Header></Header>
 
         <Box component="main">
-          <Card></Card>
-          <BannerSimple></BannerSimple>
-          <BannerSimple backgroundColor='secondary.light'></BannerSimple>
+          <BannerSimple bannerText="I'm a simple banner"></BannerSimple>
+
+          <FormControl fullWidth
+            sx={{ mt: '3em'}}>
+            <InputLabel id="state-color-select">Banner background color</InputLabel>
+            <Select
+                labelId="state-color-select"
+                id="demo-simple-select"
+                value={bgColor}
+                label="Banner background color"
+                onChange={event => setBgColor(event.target.value)}
+              >
+                <MenuItem value={'secondary.light'}>Light purple</MenuItem>
+                <MenuItem value={'primary.light'}>Light teal</MenuItem>
+                <MenuItem value={'error.dark'}>Dark red</MenuItem>
+              </Select>
+            </FormControl>
+          <BannerSimple backgroundColor={bgColor} bannerText='I use state'></BannerSimple>
         </Box>
         
         <Footer></Footer>
