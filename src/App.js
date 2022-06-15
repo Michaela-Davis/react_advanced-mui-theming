@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Card, Container, Link, Typography } from '@mui/material';
+import { Box, Card, Container } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import designTokens from './design-tokens.json'
@@ -58,7 +58,7 @@ function App() {
         backgroundColor: 'custom.backgroundColor',
       }}>
 
-      <Header></Header>
+        <Header></Header>
 
         <Box component="main">
           <Card></Card>
