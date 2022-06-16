@@ -7,6 +7,7 @@ import designTokens from './design-tokens.json'
 import { Footer } from './footer/footer'
 import { Header } from './header/header'
 import { BannerSimple } from './banner/banner-simple';
+import { BannerLoading } from './banner/banner-loading';
 
 const theme = createTheme({
   palette: {
@@ -95,6 +96,7 @@ function App() {
             />
           </FormControl>
           <BannerSimple backgroundColor={ bgColor } bannerText={ bannerText }></BannerSimple>
+          <BannerLoading backgroundColor={ bgColor } bannerText={ bannerText }></BannerLoading>
 
         </Box>
         
