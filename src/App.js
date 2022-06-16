@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { Box, Container, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import designTokens from './design-tokens.json'
-import { Footer } from './footer/footer'
-import { Header } from './header/header'
+import designTokens from '@michaela-davis/design-tokens/src/design-tokens.json';
+
+import { Footer } from './footer/footer';
+import { Header } from './header/header';
 import { BannerSimple } from './banner/banner-simple';
 import { BannerLoading } from './banner/banner-loading';
 
