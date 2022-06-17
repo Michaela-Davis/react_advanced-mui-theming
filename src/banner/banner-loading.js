@@ -15,18 +15,6 @@ export function BannerLoading({ backgroundColor = "primary.light", bannerText, b
     }, 2000)
   }, [backgroundColor] )
 
-  // useEffect(
-    
-  //   () => {
-  //   setLoading(true);
-  //   setTimeout( () => {
-  //     setLoading(false);
-  //     setInternalBG(backgroundColor);
-  //   }, 2000)
-  // }
-  
-  // , [backgroundColor] )     // whenever anything in this array changes it will run lines 20 thru 26
-
   useEffect( () => {
     console.log(bannerText);
   }, [bannerText])
