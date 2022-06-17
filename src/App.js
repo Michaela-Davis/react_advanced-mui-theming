@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import { Box, Container, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { Box, Card, Container, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import designTokens from '@michaela-davis/design-tokens/src/design-tokens.json';
 
+import './App.css';
 import { Footer } from './footer/footer';
 import { Header } from './header/header';
 import { BannerSimple } from './banner/banner-simple';
@@ -30,7 +31,8 @@ const theme = createTheme({
     },
     custom: {
       brandRed: designTokens.color.rocketRed,
-      backgroundColor: designTokens.color.white,
+      brandWhite: designTokens.color.white,
+      brandBlack: designTokens.color.primaryBlack,
     },
   },
 
@@ -53,7 +55,11 @@ const theme = createTheme({
   }
 });
 
-
+const rockets = [
+  {"name":'Solid-Fuel Rocket', 'image':'https://www.rocket.com/sites/default/files/how-do-srms-work_t.png'}, 
+  {"name":'Liquid-Fuel Rocket',  'image':'https://www.researchgate.net/profile/Joseph-Castellano-2/publication/215507622/figure/fig2/AS:341794496761856@1458501566456/Liquid-fueled-rockets-top-use-two-separate-tanks-one-for-the-fuel-and-one-for-the.png'}, 
+  {"name":'Ion Rocket', 'image':'https://www.extremetech.com/wp-content/uploads/2012/12/1000px-Electrostatic_ion_thruster-en.svg_.png'}, 
+  {"name":'Plasma Rocket', 'image':'https://thefutureofthings.com/upload/image/new-news/2008/september/fast-plasma-rocket-test/plasma-rocket.jpg'}];
 
 function App() {
 
@@ -67,6 +73,22 @@ function App() {
         <Header></Header>
 
         <Box component="main">
+
+          <Box sx={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr 1fr', gap:4, m:'2em' }} >
+            { rockets && rockets.map( (rocket, index) => 
+              <Card key={rocket} variant="outlined" 
+                sx={{ 
+                  flexGrow: '1', 
+                  p:'2em', 
+                  color:'custom.brandWhite', 
+                  backgroundColor:'custom.brandBlack',
+                  textAlign:'center'
+                }}>
+                <img src={rocket.image} className='rkt--image'></img>
+                {rocket.name}
+              </Card> 
+            )}
+          </Box>
 
           <BannerSimple bannerText="I'm a simple banner"></BannerSimple>
 
