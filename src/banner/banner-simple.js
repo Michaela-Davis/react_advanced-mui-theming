@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 
 
-export function BannerSimple({ backgroundColor = "primary.light", bannerText, buttonText = "Visit Rocket", bannerHref ="https://www.rocketcompanies.com/"}) {
+export function BannerSimple({ backgroundColor = "primary.light", bannerText, buttonText = "Visit Rocket", bannerHref ="https://www.rocketcompanies.com/" }) {
 
   return (
     <>
@@ -17,7 +17,7 @@ export function BannerSimple({ backgroundColor = "primary.light", bannerText, bu
             justifyContent: 'center',
             gap: 4,
           }}>
-          <Typography variant="h3" sx={{ color: 'primary.contrastText'}}>{ bannerText }</Typography>
+          <Typography variant="h3" sx={{ color: 'primary.contrastText' }}>{ bannerText }</Typography>
           <Button 
             variant="contained"
             color="primary"   

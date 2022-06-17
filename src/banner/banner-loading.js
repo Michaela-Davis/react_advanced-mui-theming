@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Button, Typography } from '@mui/material';
 
 
-export function BannerLoading({ backgroundColor = "primary.light", bannerText, buttonText = "Visit Rocket", bannerHref ="https://www.rocketcompanies.com/"}) {
+export function BannerLoading({ backgroundColor = "primary.light", bannerText, buttonText = "Visit Rocket", bannerHref ="https://www.rocketcompanies.com/" }) {
 
   const [loading, setLoading] = useState(false);
   const [internalBG, setInternalBG] = useState(backgroundColor);
@@ -14,10 +14,7 @@ export function BannerLoading({ backgroundColor = "primary.light", bannerText, b
       setInternalBG(backgroundColor);
     }, 2000)
   }, [backgroundColor] )
-
-  useEffect( () => {
-    console.log(bannerText);
-  }, [bannerText])
+  
 
   return (
     <>
@@ -32,7 +29,7 @@ export function BannerLoading({ backgroundColor = "primary.light", bannerText, b
             justifyContent: 'center',
             gap: 4,
           }}>
-          <Typography variant="h3" sx={{ color: 'primary.contrastText'}}>{ loading ? 'loading' : bannerText }</Typography>
+          <Typography variant="h3" sx={{ color: 'primary.contrastText' }}>{ loading ? 'loading' : bannerText }</Typography>
           <Button 
             variant="contained"
             color="primary"   

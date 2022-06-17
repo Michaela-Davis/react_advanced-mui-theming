@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Box, Card, Container, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
@@ -55,11 +54,14 @@ const theme = createTheme({
   }
 });
 
+
 const rockets = [
   {"name":'Solid-Fuel Rocket', 'image':'https://www.rocket.com/sites/default/files/how-do-srms-work_t.png'}, 
   {"name":'Liquid-Fuel Rocket',  'image':'https://www.researchgate.net/profile/Joseph-Castellano-2/publication/215507622/figure/fig2/AS:341794496761856@1458501566456/Liquid-fueled-rockets-top-use-two-separate-tanks-one-for-the-fuel-and-one-for-the.png'}, 
   {"name":'Ion Rocket', 'image':'https://www.extremetech.com/wp-content/uploads/2012/12/1000px-Electrostatic_ion_thruster-en.svg_.png'}, 
   {"name":'Plasma Rocket', 'image':'https://thefutureofthings.com/upload/image/new-news/2008/september/fast-plasma-rocket-test/plasma-rocket.jpg'}];
+
+
 
 function App() {
 
@@ -67,7 +69,7 @@ function App() {
   const [bannerText, setBannerText] = useState();
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={ theme }>
       <Container>
 
         <Header></Header>
@@ -76,7 +78,7 @@ function App() {
 
           <Box sx={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr 1fr', gap:4, m:'2em' }} >
             { rockets && rockets.map( (rocket, index) => 
-              <Card key={rocket} variant="outlined" 
+              <Card key={ rocket.name } variant="outlined" 
                 sx={{ 
                   flexGrow: '1', 
                   p:'2em', 
@@ -84,33 +86,30 @@ function App() {
                   backgroundColor:'custom.brandBlack',
                   textAlign:'center'
                 }}>
-                <img src={rocket.image} className='rkt--image'></img>
-                {rocket.name}
+                <img src={ rocket.image } className='rkt--image'></img>
+                { rocket.name }
               </Card> 
             )}
           </Box>
 
           <BannerSimple bannerText="I'm a simple banner"></BannerSimple>
 
-          <FormControl fullWidth
-            sx={{ mt: '3em'}}>
-
+          <FormControl fullWidth sx={{ mt: '3em' }}>
             <InputLabel id="state-color-select">Banner background color</InputLabel>
             <Select
               labelId="state-color-select"
               id="demo-simple-select"
-              value={bgColor}
+              value={ bgColor }
               label="Banner background color"
-              onChange={event => setBgColor(event.target.value)}
+              onChange={ event => setBgColor(event.target.value) }
             >
-              <MenuItem value={'secondary.light'}>Light purple</MenuItem>
-              <MenuItem value={'primary.light'}>Light teal</MenuItem>
-              <MenuItem value={'error.dark'}>Dark red</MenuItem>
+              <MenuItem value={ 'secondary.light' }>Light purple</MenuItem>
+              <MenuItem value={ 'primary.light' }>Light teal</MenuItem>
+              <MenuItem value={ 'error.dark' }>Dark red</MenuItem>
             </Select>
           </FormControl>
 
-          <FormControl fullWidth
-            sx={{ mt: '3em'}}>
+          <FormControl fullWidth sx={{ mt: '3em' }}>
             <TextField
               id="outlined-name"
               label="Banner text"
